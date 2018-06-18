@@ -1,7 +1,7 @@
 % Exercise 6.1
 
 append([], L, L).
-    append([H|T], L2, [H|L3]) :- append(T, L2, L3).
+append([H|T], L2, [H|L3]) :- append(T, L2, L3).
 
 prefix(P, L) :- append(P, _, L).
 suffix(S, L) :- append(_, S, L).
@@ -23,18 +23,18 @@ rev(L, R) :- reverseBase(L, [], R).
 
 palindrome(List) :- rev(List, List).
 
-palindrome[r,o,t,a,t,o,r].
-palindrome[p,o,o,p].
-palindrome[n,o,a,p,l,i,c,a].
+palindrome([r,o,t,a,t,o,r]).
+palindrome([p,o,o,p]).
+palindrome([n,o,a,p,l,i,c,a]).
 
 
 % Exercise 6.3
 
 toptail(InList, OutList):- append([_|OutList], [_], InList).
 
-toptail([a], T).
-toptail([a, b], T).
-toptail([a, b, c], T).
+toptail([a], []).
+toptail([a, b], []).
+toptail([a, b, c], []).
 
 
 % Exercise 6.4
